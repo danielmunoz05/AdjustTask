@@ -15,8 +15,26 @@ RHEL/CentOS	yum install coreutils
 ## Usage
 
 ```bash
-shuf -n  1 -e 11 25 37 64 # prints 37
-# Its prints any number in the argument
+# Run Bash Script using bash
+# In order to run a Bash script on your system, you have to use the “sh” command and specify the script name that you want to execute.
+sh scriptTask.sh
+# The output will be like this
+7
+4
+6
+5
+3
+10
+8
+2
+9
+1
+```
+
+```bash
+# Another example of usage of shuf command
+shuf -n  1 -e 11 25 37 64    # prints 37
+# It Prints any number in the argument. The -n 1 option indicates to print only one of any of the declared numbers. 
 ```
 ## Reporting Bugs
 Report shuf bugs to bug-coreutils@gnu.org
