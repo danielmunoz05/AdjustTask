@@ -18,7 +18,7 @@ RHEL/CentOS	yum install coreutils
 shuf -n  1 -e 11 25 37 64 # prints 37
 # Its prints any number in the argument
 ```
-# Reporting Bugs
+## Reporting Bugs
 Report shuf bugs to bug-coreutils@gnu.org
 GNU coreutils home page: <http://www.gnu.org/software/coreutils/>
 General help using GNU software: <http://www.gnu.org/gethelp/>
