@@ -1,0 +1,24 @@
+Task 2
+
+Imagine a server with the following specs:
+
+4 times Intel(R) Xeon(R) CPU E7-4830 v4 @ 2.00GHz
+64GB of ram
+2 tb HDD disk space
+2 x 10Gbit/s nics
+
+The server is used for SSL offloading and proxies around 25000 requests per second.
+Please let us know which metrics are interesting to monitor in that specific case and
+how would you do that? What are the challenges of monitoring this?
+
+Answer:
+
+In this scenario, we should focus on monitoring the server from the web service layer and from the physical layer with the use of its resources.
+
+From the web server, we can focus on monitoring the status of the service, and it is also very important to be able to monitor the number of sessions and set thresholds with which we can then trigger alerts when these are exceeded.
+
+In the case of the physical layer, the most important resources to monitor would be the use of the network cards, which maintains the connection and bandwidth for the web service, and the CPU load, which will perform the encryption of SSL traffic.
+
+For both monitoring, we can use the Zabbix platform. From the web server layer, for example apache, we must first enable the mod_status module and then from the zabbix server use the template called App Apache, and from there create a trigger to set a threshold for the request and generate alerts. The network and CPU we can use templates of the server O.S. and with the triggers to know if there is an excessive use that generates problems.
+
+The challenge we have in this case will be on the one hand to establish preventive thresholds that alert us to an early saturation of resources, and to establish a procedure that allows us to take action to improve the alerted statistics. On the other hand, we must focus on security, both at the network and perimeter levels, and on services through hardening.
